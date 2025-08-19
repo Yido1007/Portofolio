@@ -1,0 +1,73 @@
+[
+  {
+    "title": "Cloudify",
+    "summary": "Gerçek zamanlı hava durumu, saatlik/günlük tahmin, favori şehirler, haberler ve çoklu dil destekli Flutter hava durumu uygulaması.",
+    "tech": [
+      "Flutter",
+      "Dart",
+      "Provider",
+      "REST API",
+      "Localization",
+      "Geolocation"
+    ],
+    "githubUrl": "https://github.com/Yido1007/weather_forecast",
+    "liveUrl": "",
+    "image": "images/cloudify.png",
+    "featured": true
+  },
+  {
+    "title": "Trackwallet",
+    "summary": "Aylık gelir-gider takibi, kategori bazlı harcamalar ve görsellerle raporlama sunan kişisel finans uygulaması.",
+    "tech": [
+      "Flutter",
+      "Dart",
+      "State Management",
+      "Charts"
+    ],
+    "githubUrl": "https://github.com/Yido1007/trackwallet",
+    "liveUrl": "",
+    "image": "images/trackWallet.png",
+    "featured": false
+  },
+  {
+    "title": "Cointracker",
+    "summary": "Kripto fiyatlarını ve grafikleri takip etmeye odaklı mobil uygulama.",
+    "tech": [
+      "Flutter",
+      "Dart",
+      "REST API",
+      "Charts"
+    ],
+    "githubUrl": "https://github.com/Yido1007/cointracker",
+    "liveUrl": "",
+    "image": "images/coinTracker.png",
+    "featured": false
+  },
+  {
+    "title": "Analysis Robo",
+    "summary": "Kripto piyasası için grafikler, haber akışı, borsa ekranı, tema/dil ayarı ve basit bot etkileşimi içeren uygulama.",
+    "tech": [
+      "Flutter",
+      "Dart",
+      "Charts",
+      "Theming",
+      "Localization"
+    ],
+    "githubUrl": "https://github.com/Yido1007/AnalysisRobo",
+    "liveUrl": "",
+    "image": "images/analysisRobo.png",
+    "featured": false
+  },
+  {
+    "title": "To Do App",
+    "summary": "Görev ekleme/tamamlama odaklı basit yapılacaklar uygulaması.",
+    "tech": [
+      "Flutter",
+      "Dart"
+    ],
+    "githubUrl": "https://github.com/Yido1007/to_do_app",
+    "liveUrl": "",
+    "image": "images/toDo.png",
+    "featured": false
+  }
+]

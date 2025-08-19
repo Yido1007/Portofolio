@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Yiğithan İhsan Topçu</title>
+    <meta
+      property="og:title"
+      content="Yiğithan İhsan Topçu — Flutter Developer"
+    />
+    <meta
+      property="og:description"
+      content="Flutter ile iOS/Android için performanslı, kullanıcı odaklı uygulamalar."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0b0d10" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header container">
+      <a class="skip-link" href="#projects">İçeriğe atla</a>
+      <a href="#" class="brand" aria-label="Anasayfa">Yiğithan</a>
+      <nav class="nav">
+        <a href="#projects">Projeler</a>
+        <a href="#about">Hakkımda</a>
+        <a href="#contact">İletişim</a>
+        <a
+          href="cv/yigithan-ihsan-topcu-cv.pdf"
+          download="Yigithan_Ihsan_Topcu_CV.pdf"
+          class="btn btn-accent"
+          aria-label="CV’yi indir"
+          >CV’yi indir</a
+        >
+        <button
+          id="themeToggle"
+          class="btn btn-ghost"
+          aria-label="Tema değiştir"
+        >
+          🌓
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero__text">
+          <h1>Merhaba, ben <span class="accent">Yiğithan</span> 👋</h1>
+          <p>
+            Merhaba, ben Yiğithan — Flutter/Dart ile iOS ve Android’e
+            performanslı, ölçeklenebilir uygulamalar geliştiriyorum. UI/UX,
+            state management Localization ve temiz mimari odaklıyım. Aşağıda
+            seçtiğim projelere göz atabilirsin.
+          </p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn">Projeleri Gör</a>
+            <a href="#contact" class="btn btn-outline">İletişime Geç</a>
+          </div>
+        </div>
+        <div
+          class="hero__img"
+          role="img"
+          aria-label="Temsili portföy görseli"
+        ></div>
+      </section>
+      <section class="container" aria-labelledby="projects-title">
+        <div class="section-head">
+          <h2 id="projects-title">Projeler</h2>
+          <div class="toolbar">
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Proje veya teknoloji ara (örn: Flutter, Chart, Rest API)"
+              aria-label="Projelerde ara"
+            />
+            <label class="checkbox">
+              <input id="featuredOnly" type="checkbox" />
+              <span>Sadece öne çıkanlar</span>
+            </label>
+          </div>
+        </div>
+        <div id="projects" class="grid"></div>
+        <p id="emptyState" class="muted" hidden>Sonuç bulunamadı.</p>
+      </section>
+
+      <section id="about" class="container" aria-labelledby="about-title">
+        <h2 id="about-title">Hakkımda</h2>
+        <div class="about">
+          <p>
+            Bilgisayar Programcılığı mezunu, özellikle mobil uygulama geliştirme
+            üzerine yoğunlaşmış bir yazılım geliştiriciyim. Kullanıcı odaklı,
+            modern ve işlevsel mobil uygulamalar geliştirmeye önem veriyorum.
+            Bunun yanı sıra, yazılım dünyasındaki farklı dilleri, teknolojileri
+            ve yeni nesil çözümleri öğrenmeye ve uygulamaya açık biriyim. Ekip
+            çalışmasına uyumlu, çözüm ve hedef odaklı çalışmayı benimseyen,
+            sürekli kendini geliştirmeyi hedefleyen bir yazılımcı olarak,
+            yenilikçi projelerde katkı sağlamayı amaçlıyorum.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="container" aria-labelledby="contact-title">
+        <h2 id="contact-title">İletişim</h2>
+        <form
+          class="card"
+          id="contactForm"
+          action="https://formspree.io/f/xldlkkle"
+          method="POST"
+          novalidate
+        >
+          <input
+            type="text"
+            name="_honey"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <input type="hidden" name="_subject" value="Portföy İletişim Formu" />
+          <input type="hidden" name="_language" value="tr" />
+          <div class="form-row">
+            <label for="name">Ad</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Adınız"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label for="email">E-posta</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="ornek@mail.com"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label for="message">Mesaj</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Merhaba..."
+              required
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn" id="sendBtn">Gönder</button>
+            <span
+              id="formStatus"
+              class="muted"
+              role="status"
+              aria-live="polite"
+            ></span>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <span>© <span id="year"></span> Yiğithan. Tüm hakları saklıdır.</span>
+      <div class="socials">
+        <a href="https://github.com/Yido1007" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/yigithan-ihsan-topcu/"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
