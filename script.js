@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initTheme();
   await loadProjects();
   initFilters();
+  initMobileNav();
   initContactForm();
 });
 
@@ -171,4 +172,33 @@ function escapeHtml(str = "") {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+function initMobileNav() {
+  const toggle = document.getElementById("navToggle");
+  const nav = document.getElementById("primary-nav");
+  if (!toggle || !nav) return;
+
+  const close = () => {
+    toggle.setAttribute("aria-expanded", "false");
+    nav.dataset.collapsed = "true";
+    document.body.classList.remove("nav-open");
+  };
+  const open = () => {
+    toggle.setAttribute("aria-expanded", "true");
+    nav.dataset.collapsed = "false";
+    document.body.classList.add("nav-open");
+  };
+
+  toggle.addEventListener("click", () => {
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    expanded ? close() : open();
+  });
+
+  nav.querySelectorAll("a,button").forEach((el) => {
+    el.addEventListener("click", close);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
 }

@@ -344,3 +344,97 @@ form.card {
   padding: 8px 12px;
   border-radius: 8px;
 }
+/* ---- Varsayılan header (istersen sticky yap) ---- */
+:root {
+  --header-h: 64px;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: saturate(1.2) blur(8px);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  border-bottom: 1px solid var(--border);
+  min-height: var(--header-h);
+}
+
+/* ---- Hamburger düğmesi ---- */
+.nav-toggle {
+  display: none; /* desktop’ta gizli */
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  border-radius: 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 10px;
+}
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---- Mobil menü ---- */
+@media (max-width: 820px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .nav {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    top: calc(var(--header-h) + 8px);
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px;
+    display: grid;
+    gap: 10px;
+    transform-origin: top right;
+    transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s;
+  }
+  .nav[data-collapsed="true"] {
+    transform: scaleY(0.96);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .nav a,
+  .nav .btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Menü açıkken body scroll kilidi */
+  body.nav-open {
+    overflow: hidden;
+  }
+}
+
+/* Anchor’lar başlık altında kalmasın */
+#projects,
+#about,
+#contact {
+  scroll-margin-top: calc(var(--header-h) + 10px);
+}
